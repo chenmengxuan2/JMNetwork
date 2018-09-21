@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'JMNetwork'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of JMNetwork.'
+  s.summary          = 'For JMNetworking'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -21,11 +21,11 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/lc4y/JMNetwork'
+  s.homepage         = 'http://172.16.0.101:3000/chenmengxuan/NetWorkingHandler'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'lc4y' => '691822853@qq.com' }
-  s.source           = { :git => 'https://github.com/lc4y/JMNetwork.git', :tag => s.version.to_s }
+  s.author           = { 'lc4y' => 'chenmengxuan@jimi360.cn' }
+  s.source           = { :git => 'http://172.16.0.101:3000/chenmengxuan/NetWorkingHandler.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
