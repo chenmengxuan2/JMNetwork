@@ -13,6 +13,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        
+        CTMediator.sharedInstance().jm_request("https://flights.ctrip.com/itinerary/oneway/lxa-ctu?date=2018-10-05&portingToken=e3bf6e6e3f7c4c63a679cb642a81da9b", parameters: nil, requestType: .get, requestCallback: { (responseObject, error) in
+            
+        })
+       
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,3 +29,8 @@ class ViewController: UIViewController {
 
 }
 
+
+@objcMembers  class MXModel:NSObject {
+    var name = "chenmengxuan"
+    var age = "19"
+}
