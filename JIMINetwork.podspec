@@ -24,7 +24,7 @@ TODO: Add long description of the pod here.
   s.homepage         = 'http://172.16.0.101:3000/chenmengxuan/TuQiangRequest'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'lc4y' => 'chenmengxuan@jimi360.cn' }
+  s.author           = { 'chenmengxuan' => 'chenmengxuan@jimi360.cn' }
   s.source           = { :git => 'http://172.16.0.101:3000/chenmengxuan/TuQiangRequest.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
