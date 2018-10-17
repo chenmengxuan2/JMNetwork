@@ -23,6 +23,53 @@ import Moya
         let requestCallback = params["requestCallback"] as! RequestCallback
         requestData(url: urlStr, parameters: parameters, type: type, requestCallback: requestCallback)
     }
+    
+    ///   添加下载任务
+    ///
+    ///   - Parameters:
+    ///   - url: 下载的url
+    ///   - filePath: 下载存储的路径
+    @objc func Action_addDownloadTask(_ params: Dictionary<String, Any>){
+        let url = params["url"] as! String
+        let filePath = params["filePath"] as! String
+        TQDownloadManager.defalut.downloadTask(url, filePath:filePath)
+    }
+    
+    ///   暂停下载任务
+    ///
+    ///   - Parameters:
+    ///   - url: 下载的url
+    @objc func Action_pauseDownloadTask(_ params: Dictionary<String, Any>){
+        let url = params["url"] as! String
+        TQDownloadManager.defalut.pauseTask(url)
+    }
+    
+    ///   恢复下载任务
+    ///
+    ///   - Parameters:
+    ///   - url: 下载的url
+    @objc func Action_resumeDownloadTask(_ params: Dictionary<String, Any>) {
+        let url = params["url"] as! String
+        TQDownloadManager.defalut.resumeTask(url)
+    }
+    
+    ///   结束任务
+    ///
+    ///   - Parameters:
+    ///   - url: 下载的url
+    @objc func Action_cancelDownloadProgress(_ params: Dictionary<String, Any>) {
+        let url = params["url"] as! String
+        TQDownloadManager.defalut.cancelTask(url)
+    }
+    
+    @objc func Action_progressCallback(_ params: Dictionary<String, Any>) {
+        TQDownloadManager.defalut.downloadProgressCallback = params["progressCallback"] as? DownloadProgressCallback
+    }
+    
+    @objc func Action_finishCallback(_ params: Dictionary<String, Any>) {
+        TQDownloadManager.defalut.downloadFinishCallback = params["finishCallback"] as? DownloadFinishCallback
+    }
+    
 }
 
 
@@ -39,13 +86,11 @@ extension Target_JMNetwork {
                                  type:HTTPMethod,
                                  requestCallback:@escaping RequestCallback){
 
-        request(url, method: type, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
+        request(url, method: type, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
             requestCallback(response, response.error as! AFError)
         }
         
-    }
-    
-    
+    } 
     
 }
 
